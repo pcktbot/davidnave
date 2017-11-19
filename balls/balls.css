@@ -1,72 +1,93 @@
-@keyframes a {
-    0% {transform: translate3d(-50%,5%,0)}
-    to {transform: translate3d(15%,-10%,0)}
-}
-@keyframes b {
-    0% {transform: translate3d(5%,-5%,0)}
-    to {transform: translate3d(15%,5%,0)}
+@keyframes wipe {
+    0% {transform: translate3d(-5vw,5vh,0);}
+    100% {transform: translate3d(20vw,-10vh,0);}
 }
 html {
-    background-color: rgba(10, 20, 57, .85); 
+    background-color: rgba(10, 20, 30, 1);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 } 
-html,body {
-    max-width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+body {
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
-body:before {
-    bottom: 0;
-    left: 0;
-    width: 200vw;
-    height: 200vw;
-    transform: translate3d(-20%,20%,0);
-    animation: a 30s cubic-bezier(.455,.03,.515,.955) infinite alternate;
-    background-color: #d422c0;
-    opacity: .5;
-}
-body:after {
-    top: 0;
-    right: 0;
-    width: 60vh;
-    height: 60vh;
-    background-color: #ff2d2d;
-    opacity: .35;
-    transform: translate3d(-5%,5%,0);
-    animation: b 10s 1s cubic-bezier(.455,0.3,.515,.955) infinite alternate;
-}
-body:before, body:after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    display: block;
-    border-radius: 50%;    
-}
-footer {
-    position: absolute;
-    bottom: 0;
+.stage {
     width: 100%;
+    height: 100%;
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+    display: inline-block;
     margin: 0;
-    font-size: 1rem;
-    background-color: rgba(16, 48, 165, 0.37);
-    z-index: 0;
 }
-ul, li {
-    list-style: none;
+.moon {
     display: block;
-    padding: 0;
+    background: black;
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    margin: 0;
+    bottom: 10vh;
+    left: 0;
+    border-radius: 50%; 
+    background: radial-gradient(
+        circle at 50% 120%,
+        #ed81f6, 
+        #d091e6 10%, 
+        #780594 70%, 
+        #2a0645 95%
+    );
+    animation: wipe 10s infinite ease-in alternate;
 }
-a {
-    text-decoration: none;
-    color:aqua;
-    outline: 0;
-    opacity: .5;
-    z-index: 1;
-    white-space: nowrap;
-    font-family: 'helvetica',sans-serif;
+.moon:before {
+    content: "";
+    position: absolute;
+    top: 1%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 50% 0px, 
+        rgba(159, 71, 44, 0.8), 
+        rgba(255, 255, 255, 0) 58%
+    );
+    filter: blur(5px);
+    z-index: 2;
 }
-a:hover {
-    color: darkgrey;
-    opacity: 1;
-    transition: .5s ease-in-out;
+.planet {
+    width: 150vh;
+    height: 150vh;
+    border-radius: 50%;
+    position: relative;
+    background: red;
+    top: -90vh;
+    left: 0;
+    background: radial-gradient(
+        circle at 50% 120%, 
+        #ffdfdf, 
+        #d95e5e 10%, 
+        #5c0a0a 80%, 
+        #430a07 100%
+    );
+    z-index: -5;
 }
+.planet:before {
+    content:'';
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transform: rotate(180deg);
+    width: 60%;
+    height: 90%;
+    z-index: -4;
+    filter: blur(5px);
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 70% 10%, 
+        rgba(93, 44, 105, 0.25), 
+        rgba(255, 255, 255, 0) 70%
+    );
+    animation: wipe 10s infinite ease-in alternate;
+}
+
