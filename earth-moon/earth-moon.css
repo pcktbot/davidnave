@@ -6,6 +6,7 @@ body {
     background-image: url(stars.jpg);
     background-attachment: fixed;
     background-size: 100% 100%;
+    font-family: 'helvetica', sans-serif;
 }
 .earth {
     position: absolute;
