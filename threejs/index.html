@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>Using Three JS</title>
+		<style>
+			body {margin: 0}
+			canvas {width: 100%; height: 100%}
+		</style>
+	</head>
+	<body>
+		<script src="three.js"></script>
+		<script>
+    // to use three.js to animate, you need three things: scene, camera, and renderer. Those appear to be declared in these first variables.
+	
+            var scene = new THREE.Scene();
+            
+    // there are three cameras to choose from. Syntax for PerspectiveCamera is (FOV field of view integer, aspect ratio width x height, near clipping, far clipping integers)
+            
+    // use setSize(width/#, height/#, false) will reduce the resolution but keep the screen size
+            
+            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            
+    // WebGL is the rendering engine.
+            
+            var renderer = new THREE.WebGLRenderer();
+            
+    // this is where setsize is used as the method of the renderer
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            
+    // describe the shape using the BoxGeometry
+            
+            var geometry = new THREE.BoxGeometry(1, 1, 1);
+    
+    // use 0x instead of # for hex colors
+            
+            var material = new THREE.MeshBasicMaterial({color: 0xd4d4d4});
+     
+    // a mesh combines the styles to the shape
+            
+            var cube = new THREE.Mesh(geometry, material);
+    
+    // call a method for scene, camera
+            
+            scene.add( cube );
+    
+    // this controls the zoom
+            
+            camera.position.z = 2;
+            
+    // declare a function to loop the animation
+            
+            var animate = function() {
+                requestAnimationFrame(animate);
+    
+        // these are speed controls
+                
+                cube.rotation.x += 0.02;
+				cube.rotation.y += 0.02;
+                renderer.render(scene, camera);
+            };
+            animate();
+		</script>
+	</body>
+</html>
