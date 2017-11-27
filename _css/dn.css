@@ -1,0 +1,26 @@
+/* stylesheet for homepage davidnave.com */
+body {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 1em 0;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 25% auto auto 25%;
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 0;
+}
+.wrapper > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header, aside, section, footer {
+    background: cadetblue;
+}
+header, footer {
+    grid-column: 1 / 5;
+}
+aside {
+    grid-column: 1 / 1; /* starting slash ending */
+}
