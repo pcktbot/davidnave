@@ -1,0 +1,5 @@
+/* line 1, ../sass/dn.scss */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
