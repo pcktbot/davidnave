@@ -1,5 +1,39 @@
 *, *::before, *::after {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    
+}
+html, body {
+    margin: 0;
+    width: 100vw;
+}
+
+$type-bright: white;
+$type-dark: #363C45;
+
+h1, h2, h3, h4, h5, h6 {
+    font: {
+        family: 'Raleway', sans-serif;
+    }
+    text: {
+        decoration: none;
+    }
+    letter-spacing: inherit;
+    color: $type-dark;
+    margin: {
+        bottom: 1.2em;
+    }
+}
+pre, code {
+    font: {
+        family: 'Inconsolata', monospace;
+    }
+}
+p, a, button, label {
+    font: {
+        family: 'Crimson Text', serif;
+    }
+    color: $type-dark;
+}
+.inline-list {
+    display: inline;
 }

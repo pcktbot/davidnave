@@ -3,3 +3,34 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+/* line 5, ../sass/dn.scss */
+html, body {
+  margin: 0;
+  width: 100vw;
+}
+
+/* line 13, ../sass/dn.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  letter-spacing: inherit;
+  color: #363C45;
+  margin-bottom: 1.2em;
+}
+
+/* line 26, ../sass/dn.scss */
+pre, code {
+  font-family: 'Inconsolata', monospace;
+}
+
+/* line 31, ../sass/dn.scss */
+p, a, button, label {
+  font-family: 'Crimson Text', serif;
+  color: #363C45;
+}
+
+/* line 37, ../sass/dn.scss */
+.inline-list {
+  display: inline;
+}
