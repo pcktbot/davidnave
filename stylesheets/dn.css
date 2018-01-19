@@ -11,6 +11,43 @@ html, body {
 }
 
 /* line 13, ../sass/dn.scss */
+.wrapper {
+  display: grid;
+  background-color: purple;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+/* line 22, ../sass/dn.scss */
+.col-right-container {
+  opacity: .8;
+}
+
+/* line 25, ../sass/dn.scss */
+.col-one {
+  grid-column: 1 / 1;
+  grid-row: 1 / 5;
+  width: 20vw;
+  max-width: 300px;
+  border: 1px solid white;
+}
+
+/* line 36, ../sass/dn.scss */
+.col-two {
+  border: 1px solid white;
+  grid-column: 2 / 2;
+  grid-row: 1 / 5;
+}
+
+/* line 45, ../sass/dn.scss */
+.col-three {
+  border: 1px solid white;
+  grid-column: 3 / 3;
+  grid-row: 1 / 5;
+}
+
+/* line 55, ../sass/dn.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', sans-serif;
   text-decoration: none;
@@ -19,18 +56,18 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.2em;
 }
 
-/* line 26, ../sass/dn.scss */
+/* line 68, ../sass/dn.scss */
 pre, code {
   font-family: 'Inconsolata', monospace;
 }
 
-/* line 31, ../sass/dn.scss */
+/* line 73, ../sass/dn.scss */
 p, a, button, label {
   font-family: 'Crimson Text', serif;
   color: #363C45;
 }
 
-/* line 37, ../sass/dn.scss */
+/* line 79, ../sass/dn.scss */
 .inline-list {
   display: inline;
 }

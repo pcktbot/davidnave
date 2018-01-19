@@ -10,6 +10,48 @@ html, body {
 $type-bright: white;
 $type-dark: #363C45;
 
+.wrapper {
+  display: grid;
+  background-color: purple;
+  grid: {
+    template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    auto-rows: minmax(100px, auto);
+  }
+}
+.col-right-container {
+  opacity: .8;
+}
+.col-one {
+  grid: {
+    column: 1 / 1;
+    row: 1 / 5;
+  }
+  width: 20vw;
+  max-width: 300px;
+  border: 1px solid white;
+
+
+}
+.col-two {
+  border: 1px solid white;
+  grid: {
+    column: 2 / 2;
+    row: 1 / 5;
+  }
+
+
+}
+.col-three {
+  border: 1px solid white;
+  grid: {
+    column: 3 / 3;
+    row: 1 / 5;
+  }
+
+
+}
+
 h1, h2, h3, h4, h5, h6 {
     font: {
         family: 'Raleway', sans-serif;
